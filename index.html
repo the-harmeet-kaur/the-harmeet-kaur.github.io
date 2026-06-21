@@ -479,20 +479,26 @@
     gap: 0.65rem;
   }
   .skill-pill {
-    padding: 0.5rem 1.1rem;
-    border: 1px solid rgba(201,149,108,0.35);
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(201,149,108,0.4);
+    border-radius: 50px;
     font-size: 0.78rem;
     letter-spacing: 0.08em;
     color: var(--rose-light);
-    background: rgba(201,149,108,0.07);
-    transition: all 0.3s;
+    background: rgba(201,149,108,0.08);
+    transition: transform 0.18s cubic-bezier(.34,1.56,.64,1), box-shadow 0.18s ease, background 0.2s ease, color 0.2s ease;
     cursor: default;
+    display: inline-block;
   }
   .skill-pill:hover {
     background: var(--rose-gold);
     color: var(--white);
     border-color: var(--rose-gold);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 6px 18px rgba(201,149,108,0.3);
+  }
+  .skill-pill:active {
+    transform: translateY(1px) scale(0.97);
   }
 
   /* ── CERTS ── */
@@ -555,6 +561,35 @@
     border: 1px solid var(--rose-pale);
     background: var(--blush);
     max-width: 700px;
+    transition: transform 0.18s cubic-bezier(.34,1.56,.64,1), box-shadow 0.18s ease, background 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::after {
+    content: '→';
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    opacity: 0;
+    font-size: 1.2rem;
+    color: var(--rose-gold);
+    transition: all 0.3s ease;
+  }
+  .edu-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 14px 38px rgba(201,149,108,0.2);
+    border-color: var(--rose-gold);
+    background: var(--white);
+  }
+  .edu-card:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+  .edu-card:active {
+    transform: translateY(1px) scale(0.99);
+    box-shadow: 0 4px 10px rgba(201,149,108,0.1);
   }
   .edu-year {
     font-family: 'Playfair Display', serif;
@@ -911,24 +946,24 @@
     <div class="section-label">Credentials</div>
     <h2 class="section-title">Certifications</h2>
     <div class="certs-grid">
-      <div class="cert-card">
+      <a href="https://acamind.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;" class="cert-card">
         <div class="cert-icon">📊</div>
         <div class="cert-name">Advanced Excel</div>
-        <div class="cert-issuer">Acamind Academy · Dubai</div>
+        <div class="cert-issuer" style="color:var(--rose-gold);letter-spacing:0.08em;text-transform:uppercase;font-size:0.75rem;">Acamind Academy · Dubai</div>
         <div class="cert-date">November 2025</div>
-      </div>
-      <div class="cert-card">
+      </a>
+      <a href="https://acamind.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;" class="cert-card">
         <div class="cert-icon">📈</div>
         <div class="cert-name">Mastering Power BI</div>
-        <div class="cert-issuer">Acamind Academy · Dubai</div>
+        <div class="cert-issuer" style="color:var(--rose-gold);letter-spacing:0.08em;text-transform:uppercase;font-size:0.75rem;">Acamind Academy · Dubai</div>
         <div class="cert-date">November 2025</div>
-      </div>
-      <div class="cert-card">
+      </a>
+      <a href="https://www.infowizindia.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;" class="cert-card">
         <div class="cert-icon">👥</div>
         <div class="cert-name">Human Resources Management Training</div>
-        <div class="cert-issuer">Infowiz Software Solutions · Chandigarh</div>
+        <div class="cert-issuer" style="color:var(--rose-gold);letter-spacing:0.08em;text-transform:uppercase;font-size:0.75rem;">Infowiz Software Solutions · Chandigarh</div>
         <div class="cert-date">July 2018</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -938,13 +973,15 @@
   <div class="section-inner">
     <div class="section-label">Education</div>
     <h2 class="section-title">Academic Background</h2>
-    <div class="edu-card">
+    <a href="https://www.ptu.ac.in/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;max-width:700px;">
+    <div class="edu-card" style="max-width:100%;">
       <div class="edu-year">2019</div>
       <div>
         <div class="edu-degree">Bachelor of Commerce</div>
         <div class="edu-uni">Punjab Technical University · India</div>
       </div>
     </div>
+    </a>
   </div>
 </section>
 
